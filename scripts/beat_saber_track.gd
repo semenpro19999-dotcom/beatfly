@@ -14,6 +14,7 @@ extends Node3D
 @onready var dopamine_bar: ProgressBar = $CanvasLayer/HUD/DopamineBar
 @onready var pain_bar: ProgressBar = $CanvasLayer/HUD/PainBar
 @onready var neuron_label: Label = $CanvasLayer/HUD/NeuronLabel
+@onready var brain_vis: BrainVisualizer2D = $CanvasLayer/HUD/BrainVisualizer
 
 var spawn_timer: float = 0.0
 var beat_interval: float = 60.0 / 128.0
@@ -95,12 +96,16 @@ func _on_cube_missed(_cube: Cube3D) -> void:
 
 func _on_dopamine_spike(amount: float, neuron_id: String) -> void:
 	fly_model.on_dopamine_boost(amount)
+	if brain_vis:
+		brain_vis.trigger_dopamine()
 	if neuron_label:
 		neuron_label.text = "АКТИВЕН (neurons.csv): " + neuron_id + " (+%.1f Дофамин)" % amount
 		neuron_label.modulate = Color(0.2, 1.0, 0.4)
 
 func _on_pain_spike(pain_amount: float, neuron_id: String) -> void:
 	fly_model.on_pain_hit(abs(pain_amount))
+	if brain_vis:
+		brain_vis.trigger_pain()
 	if neuron_label:
 		neuron_label.text = "БОБО! " + neuron_id + " (Штраф %.1f)" % pain_amount
 		neuron_label.modulate = Color(1.0, 0.2, 0.2)

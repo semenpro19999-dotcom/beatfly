@@ -26,16 +26,18 @@
 
 ---
 
-## 2. Структура проекта для Godot 4 🎮
+## 2. Структура проекта для Godot 4.7.2 🎮
 
-В репозитории подготовлены полные исходники для **Godot Engine 4.x**:
+Проект полностью переведен на новейшую версию **Godot Engine 4.7.2** (Forward+ рендерер, расширенная типизация GDScript 2.0, оптимизация Wayland/PCSS):
 
-* `project.godot` — конфигурация проекта Godot 4 (3D Forward+/Compatibility, окно 1280x720).
-* `scripts/fly_brain_rl.gd` — биологический мозг мухи на GDScript (грибовидное тело, клетки Кеньона, выброс дофамина PAM и ноцицепция PPL1).
-* `scripts/fly_model_3d.gd` — 3D-модель мухи: трепетание крыльев с частотой 200 Гц, сияющие фасеточные глаза, взмахи световыми мечами, рефлекторная дрожь при «бобо».
-* `scripts/cube_3d.gd` — 3D-кубики Beat Saber, летящие навстречу мухе и разрубаемые на физические осколки.
-* `scripts/beat_saber_track.gd` — дирижер ритм-трека и спавнер блоков.
-* `scenes/main_beatfly.tscn` — готовая 3D-сцена со световыми эффектами, камерой и HUD.
+* `project.godot` — файл конфигурации для **Godot 4.7.2** (3D Forward+, Vulkan, поддержка физических клавиш ввода `KEY_J`).
+* `scripts/fly_brain_rl.gd` — биологический мозг мухи на GDScript 4.7 с адаптивным Q-Learning, синаптической пластичностью (LTP/LTD) и интеграцией с `neurons.csv`.
+* `scripts/connectome_loader.gd` — прямой потоковый парсер всех 166 701 нейронов из `res://neurons.csv`.
+* `scripts/fly_model_3d.gd` — анатомическая 3D-модель дрозофилы со световыми мечами Beat Saber (Red/Blue).
+* `scripts/cube_3d.gd` — физические 3D-кубики Beat Saber, разлетающиеся на осколки.
+* `scripts/brain_visualizer_2d.gd` — визуальное окно отделов мозга дрозофилы в Godot по клавише `J`.
+* `scripts/beat_saber_track.gd` — координатор дорожки и спавнер 4 полос Beat Saber.
+* `scenes/main_beatfly.tscn` — главная сцена с преднастроенным освещением, камерой и HUD.
 
 ---
 
