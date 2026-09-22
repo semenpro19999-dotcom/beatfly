@@ -1,0 +1,3202 @@
+[
+  {
+    "id": "821061",
+    "nt": "ACH",
+    "sc": "vnc_intrinsic",
+    "type": "IN23B014",
+    "side": "right",
+    "func": "23B"
+  },
+  {
+    "id": "52272",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "TmY10",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11159",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp71",
+    "side": "right",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "10606",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LAL125",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "13954",
+    "nt": "SER",
+    "sc": "cb_intrinsic",
+    "type": "CRZ02",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "161754",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Dm9",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "119833",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "vDeltaG",
+    "side": "right",
+    "func": "DM3_CX_p"
+  },
+  {
+    "id": "10057",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "mALD1",
+    "side": "right",
+    "func": "CREa1_ventral"
+  },
+  {
+    "id": "518500",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm4",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11777",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "MBON15",
+    "side": "right",
+    "func": "DL1_dorsal"
+  },
+  {
+    "id": "51962",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "CB3733",
+    "side": "right",
+    "func": "LHl4_dorsal"
+  },
+  {
+    "id": "534256",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Dm3a",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "33817",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Y3",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "64815",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T2",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "53331",
+    "nt": "DA",
+    "sc": "cb_intrinsic",
+    "type": "KCab-ap1",
+    "side": "left",
+    "func": "MBp2"
+  },
+  {
+    "id": "72523",
+    "nt": "DA",
+    "sc": "cb_intrinsic",
+    "type": "KCg-m",
+    "side": "right",
+    "func": "MBp1"
+  },
+  {
+    "id": "10059",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp20",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "176671",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Mi2",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10197",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp02",
+    "side": "left",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "127842",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T4c",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "87352",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm4",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10206",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VS",
+    "side": "right",
+    "func": "no_lineage"
+  },
+  {
+    "id": "11742",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp104",
+    "side": "left",
+    "func": "PSp2"
+  },
+  {
+    "id": "78807",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "SMP477",
+    "side": "left",
+    "func": "DM1_antero_dorsal"
+  },
+  {
+    "id": "63923",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "LAL113",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "138691",
+    "nt": "HIST",
+    "sc": "ol_sensory",
+    "type": "R1-R6",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "124784",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T5d",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "94406",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "LC12",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "580918",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Mi2",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11741",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "mALB1",
+    "side": "left",
+    "func": "CREa1_ventral"
+  },
+  {
+    "id": "13230",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "VC5_lvPN",
+    "side": "left",
+    "func": "ALlv1"
+  },
+  {
+    "id": "42192",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm38",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "111916",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm1",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10226",
+    "nt": "OCT",
+    "sc": "visual_centrifugal",
+    "type": "OA-AL2i3",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11327",
+    "nt": "DA",
+    "sc": "cb_intrinsic",
+    "type": "PPL101",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10589",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp43",
+    "side": "left",
+    "func": "DM6_central2"
+  },
+  {
+    "id": "11176",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "MBON26",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "227000",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "GNG310",
+    "side": "left",
+    "func": "LB19"
+  },
+  {
+    "id": "144226",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Cm1",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10449",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe025",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10517",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LAL124",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11516",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LCNOpm",
+    "side": "left",
+    "func": "LALv1_dorsal"
+  },
+  {
+    "id": "11490",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LAL073",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "36811",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "MeLo2",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "63356",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Mi14",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "114623",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "L3",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "812108",
+    "nt": "ACH",
+    "sc": "vnc_sensory",
+    "type": "SNta37",
+    "side": "",
+    "func": ""
+  },
+  {
+    "id": "11455",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "MBON32",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "100434",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "L3",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11290",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp66",
+    "side": "right",
+    "func": "VLPl&p2_posterior"
+  },
+  {
+    "id": "10181",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "HSN",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "531893",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Tm5c",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10016",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "HSE",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11831",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "AOTU063_a",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10063",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp27",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10727",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe002",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11405",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "LAL016",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10249",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp31",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "66993",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "L3",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10417",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp103",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "166524",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T3",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "34522",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Y3",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11370",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "AOTU063_b",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10599",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "MBON35",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11153",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "LC22",
+    "side": "right",
+    "func": "VPNd1"
+  },
+  {
+    "id": "10073",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VS",
+    "side": "left",
+    "func": "no_lineage"
+  },
+  {
+    "id": "11659",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "LAL161",
+    "side": "right",
+    "func": "DM5_central"
+  },
+  {
+    "id": "10700",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe001",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11647",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe006",
+    "side": "right",
+    "func": "PSp3"
+  },
+  {
+    "id": "11805",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "MBON31",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11764",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "AOTU064",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "96534",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T4c",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11692",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "LC12",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "85549",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Dm15",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "61696",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Dm8b",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11065",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp14",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10195",
+    "nt": "SER",
+    "sc": "descending_neuron",
+    "type": "DNp29",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10957",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp69",
+    "side": "right",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "48084",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "CB1786_a",
+    "side": "left",
+    "func": "LB3"
+  },
+  {
+    "id": "11872",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp22",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "176490",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LHPV4d10",
+    "side": "left",
+    "func": "LHp1"
+  },
+  {
+    "id": "10204",
+    "nt": "OCT",
+    "sc": "visual_centrifugal",
+    "type": "OA-AL2i2",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "67054",
+    "nt": "GABA",
+    "sc": "ol_intrinsic",
+    "type": "C3",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11554",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp63",
+    "side": "left",
+    "func": "SMPpm1"
+  },
+  {
+    "id": "11215",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp15",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10405",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "mAL_m5a",
+    "side": "left",
+    "func": "CREa1_ventral"
+  },
+  {
+    "id": "10826",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "MBON21",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10070",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "AOTU019",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "107677",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm6",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11193",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "ALIN6",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "111752",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Dm3c",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10593",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "AL-MBDL1",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11166",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "mALD4",
+    "side": "left",
+    "func": "CREa1_ventral"
+  },
+  {
+    "id": "26874",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "MeLo11",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "135551",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T5b",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "517063",
+    "nt": "GABA",
+    "sc": "ol_intrinsic",
+    "type": "C3",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11613",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp45",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10403",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VS",
+    "side": "right",
+    "func": "no_lineage"
+  },
+  {
+    "id": "11674",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp68",
+    "side": "left",
+    "func": "SMPpv2_dorsal"
+  },
+  {
+    "id": "10283",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp103",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10502",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "AOTU041",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "515995",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "CB2298",
+    "side": "left",
+    "func": "SLPpl1"
+  },
+  {
+    "id": "10878",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "AOTU061",
+    "side": "left",
+    "func": "DL1_ventral"
+  },
+  {
+    "id": "11382",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VSm",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10712",
+    "nt": "GLUT",
+    "sc": "descending_neuron",
+    "type": "DNp36",
+    "side": "left",
+    "func": "DM6_central1__prim"
+  },
+  {
+    "id": "11410",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe023",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "27696",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "L2",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10464",
+    "nt": "GLUT",
+    "sc": "descending_neuron",
+    "type": "DNp08",
+    "side": "right",
+    "func": "PSp3"
+  },
+  {
+    "id": "10378",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "AL-MBDL1",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "37229",
+    "nt": "ACH",
+    "sc": "ascending_neuron",
+    "type": "AN07B043",
+    "side": "left",
+    "func": "07B"
+  },
+  {
+    "id": "10369",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "LAL198",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11259",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp68",
+    "side": "right",
+    "func": "SMPpv2_dorsal"
+  },
+  {
+    "id": "66294",
+    "nt": "GABA",
+    "sc": "ol_intrinsic",
+    "type": "Mi4",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11137",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp04",
+    "side": "right",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "185437",
+    "nt": "ACH",
+    "sc": "cb_sensory",
+    "type": "ORN_DA1",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11133",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp70",
+    "side": "right",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "801921",
+    "nt": "ACH",
+    "sc": "vnc_intrinsic",
+    "type": "INXXX101",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "24734",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "MeVP4",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11513",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp07",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10658",
+    "nt": "OCT",
+    "sc": "visual_centrifugal",
+    "type": "OA-AL2i3",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10117",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp02",
+    "side": "right",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "10628",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "AL-AST1",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "164888",
+    "nt": "HIST",
+    "sc": "ol_sensory",
+    "type": "R7y",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11644",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "ALIN4",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "800139",
+    "nt": "GABA",
+    "sc": "vnc_intrinsic",
+    "type": "IN13A002",
+    "side": "left",
+    "func": "13A"
+  },
+  {
+    "id": "10026",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp18",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11072",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp12",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10774",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "AOTU100m",
+    "side": "right",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "59958",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Tm5c",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "47742",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm1",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11618",
+    "nt": "DA",
+    "sc": "cb_intrinsic",
+    "type": "PPL102",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11177",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp09",
+    "side": "right",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "11457",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LAL108",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "80037",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm1",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "87475",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Y14",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "821214",
+    "nt": "GLUT",
+    "sc": "vnc_intrinsic",
+    "type": "IN21A096",
+    "side": "left",
+    "func": "21A"
+  },
+  {
+    "id": "59542",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "MeTu4b",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "23834",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "L2",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "172875",
+    "nt": "HIST",
+    "sc": "ol_sensory",
+    "type": "R8y",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11636",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LAL126",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "151338",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Dm3b",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10322",
+    "nt": "OCT",
+    "sc": "visual_centrifugal",
+    "type": "OA-AL2i2",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10267",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "MBON14",
+    "side": "right",
+    "func": "FLAa2"
+  },
+  {
+    "id": "818922",
+    "nt": "GABA",
+    "sc": "vnc_intrinsic",
+    "type": "IN06A083",
+    "side": "right",
+    "func": "06A"
+  },
+  {
+    "id": "10601",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe025",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10810",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp66",
+    "side": "left",
+    "func": "VLPl&p2_posterior"
+  },
+  {
+    "id": "10269",
+    "nt": "OCT",
+    "sc": "visual_centrifugal",
+    "type": "OA-AL2i2",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10677",
+    "nt": "OCT",
+    "sc": "visual_centrifugal",
+    "type": "OA-AL2i4",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "233782",
+    "nt": "ACH",
+    "sc": "cb_sensory",
+    "type": "ORN_DA1",
+    "side": "",
+    "func": ""
+  },
+  {
+    "id": "10636",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "AOTU005",
+    "side": "left",
+    "func": "AOTUv3_dorsal"
+  },
+  {
+    "id": "11402",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "MBON11",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10868",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LAL083",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10580",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp70",
+    "side": "left",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "30852",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "AVLP047",
+    "side": "right",
+    "func": "VLPd1"
+  },
+  {
+    "id": "10433",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp10",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11560",
+    "nt": "DA",
+    "sc": "cb_intrinsic",
+    "type": "PPL201",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "110609",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm9",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10457",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "mALD1",
+    "side": "left",
+    "func": "CREa1_ventral"
+  },
+  {
+    "id": "10068",
+    "nt": "GLUT",
+    "sc": "descending_neuron",
+    "type": "DNp30",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10384",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp63",
+    "side": "right",
+    "func": "SMPpm1"
+  },
+  {
+    "id": "905611",
+    "nt": "ACH",
+    "sc": "vnc_sensory",
+    "type": "SNta22",
+    "side": "",
+    "func": ""
+  },
+  {
+    "id": "11793",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "HST",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10354",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp73",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "525127",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "CB0221",
+    "side": "right",
+    "func": "DM6_central1"
+  },
+  {
+    "id": "11334",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe045",
+    "side": "right",
+    "func": "SMPpv2_dorsal"
+  },
+  {
+    "id": "10143",
+    "nt": "GLUT",
+    "sc": "descending_neuron",
+    "type": "DNp30",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10458",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp13",
+    "side": "left",
+    "func": "PSp2"
+  },
+  {
+    "id": "151644",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm3",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11373",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp102",
+    "side": "right",
+    "func": "PSp2"
+  },
+  {
+    "id": "45273",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm36",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "39014",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNge126",
+    "side": "left",
+    "func": "LB7"
+  },
+  {
+    "id": "800035",
+    "nt": "GABA",
+    "sc": "vnc_intrinsic",
+    "type": "IN05B002",
+    "side": "left",
+    "func": "05B"
+  },
+  {
+    "id": "10001",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp01",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11558",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "ALIN5",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10219",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "AOTU023",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "807436",
+    "nt": "GABA",
+    "sc": "vnc_intrinsic",
+    "type": "IN19A041",
+    "side": "left",
+    "func": "19A"
+  },
+  {
+    "id": "10850",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "AOTU016_c",
+    "side": "right",
+    "func": "CREa2_ventral"
+  },
+  {
+    "id": "10425",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp10",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11196",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "AOTU103m",
+    "side": "right",
+    "func": "LHl2_dorsal__prim"
+  },
+  {
+    "id": "527173",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm12",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "174279",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Mi15",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11812",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "LC31b",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10813",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp43",
+    "side": "right",
+    "func": "DM6_central2"
+  },
+  {
+    "id": "10704",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "MBON11",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11657",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe005",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "68262",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "TmY13",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10652",
+    "nt": "OCT",
+    "sc": "visual_centrifugal",
+    "type": "OA-AL2i4",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "62465",
+    "nt": "GABA",
+    "sc": "ol_intrinsic",
+    "type": "C3",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10446",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp73",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10674",
+    "nt": "GABA",
+    "sc": "descending_neuron",
+    "type": "DNp59",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10286",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe053",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10664",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp33",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10010",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp01",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "95791",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T5a",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10388",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp13",
+    "side": "right",
+    "func": "PSp2"
+  },
+  {
+    "id": "10290",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "LAL138",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10079",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "MBON06",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10783",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp09",
+    "side": "left",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "48248",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "FC1A",
+    "side": "right",
+    "func": "DM1_CX_d2"
+  },
+  {
+    "id": "11245",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "LAL156_a",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11785",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "MBON33",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10157",
+    "nt": "GABA",
+    "sc": "ol_intrinsic",
+    "type": "CT1",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11750",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LAL083",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "184122",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm9",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "12782",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "DL1_adPN",
+    "side": "right",
+    "func": "ALad1__prim"
+  },
+  {
+    "id": "56607",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "FC3_b",
+    "side": "left",
+    "func": "DM2_CX_d2"
+  },
+  {
+    "id": "45154",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "TmY5a",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11380",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp14",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11186",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "LAL183",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10245",
+    "nt": "GLUT",
+    "sc": "descending_neuron",
+    "type": "DNp36",
+    "side": "right",
+    "func": "DM6_central1__prim"
+  },
+  {
+    "id": "10265",
+    "nt": "OCT",
+    "sc": "visual_centrifugal",
+    "type": "OA-AL2i2",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "143194",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Dm8b",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "16927",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "PVLP085",
+    "side": "right",
+    "func": "VLPl1_or_VLPl5"
+  },
+  {
+    "id": "242067",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "L3",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "49213",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Li21",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10210",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LAL074",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11519",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "mAL_m5b",
+    "side": "right",
+    "func": "CREa1_ventral"
+  },
+  {
+    "id": "513300",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Mi1",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11559",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "mALB4",
+    "side": "right",
+    "func": "CREa1_ventral"
+  },
+  {
+    "id": "10013",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "MBON01",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10223",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe056",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10461",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "AL-AST1",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11808",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "AOTU101m",
+    "side": "left",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "519583",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "MeVP14",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11794",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "LC31b",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "81874",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T2",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "128178",
+    "nt": "HIST",
+    "sc": "ol_sensory",
+    "type": "R1-R6",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10713",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp42",
+    "side": "left",
+    "func": "PSp3"
+  },
+  {
+    "id": "11280",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "LAL205",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "18852",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "L2",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11614",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe032",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "90264",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Mi14",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10012",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VS",
+    "side": "right",
+    "func": "no_lineage"
+  },
+  {
+    "id": "13312",
+    "nt": "SER",
+    "sc": "cb_intrinsic",
+    "type": "PPL203",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10034",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "HSE",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "121184",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Dm3b",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10752",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp03",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10399",
+    "nt": "DA",
+    "sc": "cb_intrinsic",
+    "type": "PPL202",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "51370",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm1",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11488",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "ALON3",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "16469",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "LPLC4",
+    "side": "right",
+    "func": "VPNd1"
+  },
+  {
+    "id": "800908",
+    "nt": "GABA",
+    "sc": "vnc_intrinsic",
+    "type": "INXXX058",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10280",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp47",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11121",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp52",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10005",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "AOTU019",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11145",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "MBON20",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10023",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "HSS",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "130605",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Mi13",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10239",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "AOTU042",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10284",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VS",
+    "side": "right",
+    "func": "no_lineage"
+  },
+  {
+    "id": "10212",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "AOTU042",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11846",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp102",
+    "side": "left",
+    "func": "PSp2"
+  },
+  {
+    "id": "63335",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "PLP222",
+    "side": "right",
+    "func": "VLPp2"
+  },
+  {
+    "id": "10816",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "MBON31",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "148137",
+    "nt": "DA",
+    "sc": "cb_intrinsic",
+    "type": "KCg-d",
+    "side": "left",
+    "func": "MBp4"
+  },
+  {
+    "id": "11182",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp101",
+    "side": "right",
+    "func": "DM6_central2"
+  },
+  {
+    "id": "811195",
+    "nt": "ACH",
+    "sc": "vnc_sensory",
+    "type": "SNta30",
+    "side": "",
+    "func": ""
+  },
+  {
+    "id": "59202",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T5b",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "20671",
+    "nt": "GABA",
+    "sc": "ol_intrinsic",
+    "type": "Pm2b",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "55219",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "TmY20",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10875",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "AOTU042",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11747",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "LC11",
+    "side": "left",
+    "func": "VPNp3"
+  },
+  {
+    "id": "54990",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm2",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11505",
+    "nt": "GABA",
+    "sc": "descending_neuron",
+    "type": "DNp54",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10037",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VS",
+    "side": "right",
+    "func": "no_lineage"
+  },
+  {
+    "id": "11204",
+    "nt": "GLUT",
+    "sc": "descending_neuron",
+    "type": "DNp49",
+    "side": "left",
+    "func": "PSp3"
+  },
+  {
+    "id": "11134",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VSm",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "556043",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "L2",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "813999",
+    "nt": "ACH",
+    "sc": "vnc_sensory",
+    "type": "SNta02",
+    "side": "",
+    "func": ""
+  },
+  {
+    "id": "10006",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VS",
+    "side": "left",
+    "func": "no_lineage"
+  },
+  {
+    "id": "11123",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "ALBN1",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10162",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp20",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "65408",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm39",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "141066",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T4a",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "530005",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T4d",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10804",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "MBON20",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11054",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "LAL015",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "148495",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "SMP328_a",
+    "side": "right",
+    "func": "DM3_dorso_lateral"
+  },
+  {
+    "id": "10989",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp03",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10725",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "LAL047",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11795",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LAL083",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11438",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp33",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10680",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp48",
+    "side": "left",
+    "func": "SMPpm1"
+  },
+  {
+    "id": "803621",
+    "nt": "ACH",
+    "sc": "vnc_intrinsic",
+    "type": "IN04B099",
+    "side": "left",
+    "func": "04B"
+  },
+  {
+    "id": "11012",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "LAL157",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "121359",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T4b",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11498",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "LPLC2",
+    "side": "left",
+    "func": "VPNd1"
+  },
+  {
+    "id": "10410",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "AOTU035",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10527",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe017",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10406",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "AOTU012",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "530729",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm6",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11862",
+    "nt": "DA",
+    "sc": "cb_intrinsic",
+    "type": "KCab-s",
+    "side": "left",
+    "func": "MBp1"
+  },
+  {
+    "id": "21355",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "MeLo13",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "34154",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Y12",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10830",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "LAL159",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10573",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "LC10a",
+    "side": "left",
+    "func": "VPNd2"
+  },
+  {
+    "id": "11571",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "AOTU042",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10615",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "mALB2",
+    "side": "right",
+    "func": "CREa1_ventral"
+  },
+  {
+    "id": "10419",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "HSS",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10578",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe034",
+    "side": "right",
+    "func": "SMPpv1"
+  },
+  {
+    "id": "22330",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm2",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11004",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "LAL194",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "28831",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "L1",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11752",
+    "nt": "DA",
+    "sc": "cb_intrinsic",
+    "type": "PPL103",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10112",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VS",
+    "side": "right",
+    "func": "no_lineage"
+  },
+  {
+    "id": "49085",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "LC6",
+    "side": "left",
+    "func": "VPNd3"
+  },
+  {
+    "id": "10546",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LAL125",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11596",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe022",
+    "side": "right",
+    "func": "PSp3"
+  },
+  {
+    "id": "53230",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm26",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "101788",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T4b",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "17145",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "Dm4",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11859",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe050",
+    "side": "left",
+    "func": "DM6_central1"
+  },
+  {
+    "id": "142977",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Cm2",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "20268",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "L2",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "95950",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T4a",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10687",
+    "nt": "OCT",
+    "sc": "visual_centrifugal",
+    "type": "OA-AL2i3",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11566",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "ALIN4",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10801",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "LPLC4",
+    "side": "left",
+    "func": "VPNd1"
+  },
+  {
+    "id": "34914",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "CB1276",
+    "side": "right",
+    "func": "LHa2"
+  },
+  {
+    "id": "10148",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "AOTU041",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10770",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp23",
+    "side": "left",
+    "func": "SMPpv2_dorsal"
+  },
+  {
+    "id": "11298",
+    "nt": "GLUT",
+    "sc": "descending_neuron",
+    "type": "DNp49",
+    "side": "right",
+    "func": "PSp3"
+  },
+  {
+    "id": "10072",
+    "nt": "OCT",
+    "sc": "visual_centrifugal",
+    "type": "OA-AL2i1",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "909202",
+    "nt": "GABA",
+    "sc": "vnc_intrinsic",
+    "type": "IN09A078",
+    "side": "right",
+    "func": "09A"
+  },
+  {
+    "id": "11459",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe006",
+    "side": "left",
+    "func": "PSp3"
+  },
+  {
+    "id": "11687",
+    "nt": "GLUT",
+    "sc": "descending_neuron",
+    "type": "DNpe031",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10106",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp11",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10766",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VS",
+    "side": "right",
+    "func": "no_lineage"
+  },
+  {
+    "id": "10649",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp38",
+    "side": "left",
+    "func": "PSp2"
+  },
+  {
+    "id": "10590",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe052",
+    "side": "left",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "11445",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "AOTU064",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "84565",
+    "nt": "GLUT",
+    "sc": "ol_intrinsic",
+    "type": "TmY5a",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "11704",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp07",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10341",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp19",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11779",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "LAL190",
+    "side": "left",
+    "func": "DM6_central2"
+  },
+  {
+    "id": "10558",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp35",
+    "side": "right",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "34735",
+    "nt": "ACH",
+    "sc": "sensory_ascending",
+    "type": "SApp10",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10834",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe013",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11088",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp55",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "118854",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T4c",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10962",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "LAL026_a",
+    "side": "left",
+    "func": "CREa2_ventral"
+  },
+  {
+    "id": "11201",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe007",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11251",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe043",
+    "side": "left",
+    "func": "SMPpm1"
+  },
+  {
+    "id": "11261",
+    "nt": "GABA",
+    "sc": "descending_neuron",
+    "type": "DNp54",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11372",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "LC9",
+    "side": "right",
+    "func": "VPNd3"
+  },
+  {
+    "id": "11724",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp64",
+    "side": "right",
+    "func": "SMPpv2_dorsal"
+  },
+  {
+    "id": "10015",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "HSN",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10732",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe056",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10584",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp06",
+    "side": "right",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "11701",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "mALD3",
+    "side": "left",
+    "func": "CREa1_ventral"
+  },
+  {
+    "id": "12441",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "CB4176",
+    "side": "right",
+    "func": "VLPa2"
+  },
+  {
+    "id": "139928",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T4b",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10629",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "AL-AST1",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10366",
+    "nt": "GABA",
+    "sc": "descending_neuron",
+    "type": "DNp59",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "43391",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "PLP181",
+    "side": "right",
+    "func": "VPNp&v1_ventral"
+  },
+  {
+    "id": "11185",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "AOTU052",
+    "side": "right",
+    "func": "DL1_ventral"
+  },
+  {
+    "id": "11573",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe021",
+    "side": "left",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "10562",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp26",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10228",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp06",
+    "side": "left",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "127092",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm20",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10048",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp18",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "133660",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T5c",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10009",
+    "nt": "GABA",
+    "sc": "ol_intrinsic",
+    "type": "CT1",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "11551",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VS",
+    "side": "right",
+    "func": "no_lineage"
+  },
+  {
+    "id": "594332",
+    "nt": "GABA",
+    "sc": "ol_intrinsic",
+    "type": "Tm_unclear",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10161",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VS",
+    "side": "left",
+    "func": "no_lineage"
+  },
+  {
+    "id": "10825",
+    "nt": "OCT",
+    "sc": "visual_centrifugal",
+    "type": "OA-AL2i3",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10234",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp35",
+    "side": "left",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "10031",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "AOTU041",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "44641",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "LC21",
+    "side": "right",
+    "func": "VPNp3"
+  },
+  {
+    "id": "10526",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "AOTU035",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "19068",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "CL282",
+    "side": "right",
+    "func": "VPNp&v1_ventral"
+  },
+  {
+    "id": "11632",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe052",
+    "side": "right",
+    "func": "SMPpv2_ventral"
+  },
+  {
+    "id": "111281",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T4d",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "18729",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "GNG358",
+    "side": "left",
+    "func": "MX7"
+  },
+  {
+    "id": "105573",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "L2",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10264",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp31",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11257",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp45",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11026",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "LAL009",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10091",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe042",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "120964",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "Tm20",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "93743",
+    "nt": "ACH",
+    "sc": "ol_intrinsic",
+    "type": "T2a",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10311",
+    "nt": "ACH",
+    "sc": "visual_projection",
+    "type": "VS",
+    "side": "right",
+    "func": "no_lineage"
+  },
+  {
+    "id": "11351",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LAL108",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10259",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp11",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "151471",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LAL094",
+    "side": "right",
+    "func": "AOTUv3_ventral"
+  },
+  {
+    "id": "76818",
+    "nt": "GABA",
+    "sc": "ol_intrinsic",
+    "type": "Cm3",
+    "side": "left",
+    "func": ""
+  },
+  {
+    "id": "10054",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe013",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "16549",
+    "nt": "GABA",
+    "sc": "ol_intrinsic",
+    "type": "Li30",
+    "side": "right",
+    "func": ""
+  },
+  {
+    "id": "10018",
+    "nt": "GABA",
+    "sc": "cb_intrinsic",
+    "type": "LAL138",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10968",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp34",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10244",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp55",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11416",
+    "nt": "GLUT",
+    "sc": "cb_intrinsic",
+    "type": "LAL083",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11020",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp05",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "18480",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "LAL164",
+    "side": "right",
+    "func": "DM5_central"
+  },
+  {
+    "id": "10011",
+    "nt": "OCT",
+    "sc": "visual_centrifugal",
+    "type": "OA-AL2i1",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11787",
+    "nt": "ACH",
+    "sc": "cb_intrinsic",
+    "type": "AOTU033",
+    "side": "right",
+    "func": "putative_primary"
+  },
+  {
+    "id": "11662",
+    "nt": "GABA",
+    "sc": "descending_neuron",
+    "type": "DNp24",
+    "side": "left",
+    "func": "putative_primary"
+  },
+  {
+    "id": "10823",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNp48",
+    "side": "right",
+    "func": "SMPpm1"
+  },
+  {
+    "id": "10931",
+    "nt": "ACH",
+    "sc": "descending_neuron",
+    "type": "DNpe045",
+    "side": "left",
+    "func": "SMPpv2_dorsal"
+  }
+]

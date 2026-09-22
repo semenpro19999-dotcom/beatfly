@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #030408;
+  font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #ffffff;
+}
+
+#canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#hud-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hud-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px 24px;
+}
+
+/* Pain & Dopamine full-screen flash effects */
+.pain-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 120px rgba(255, 0, 50, 0.85);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+  z-index: 5;
+}
+
+.dopamine-flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 255, 170, 0.25) 0%, rgba(255, 215, 0, 0) 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+  z-index: 4;
+}
+
+.hud-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  pointer-events: auto;
+}
+
+.hud-card {
+  background: rgba(12, 16, 28, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 245, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 12px rgba(0, 245, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px 18px;
+}
+
+.score-card {
+  min-width: 180px;
+}
+
+.rl-card {
+  flex: 1;
+  max-width: 460px;
+}
+
+.neuron-card {
+  min-width: 280px;
+  border-color: rgba(255, 0, 85, 0.35);
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #7997b5;
+  margin-bottom: 4px;
+}
+
+.val-big {
+  font-size: 32px;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 245, 255, 0.6);
+  line-height: 1.1;
+}
+
+.highlight {
+  color: #00f5ff;
+  font-weight: bold;
+}
+
+.sub-label {
+  font-size: 12px;
+  color: #8da4be;
+  margin-top: 2px;
+}
+
+.accuracy-row {
+  display: flex;
+  gap: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.sub-text {
+  color: #8da4be;
+  font-weight: normal;
+}
+
+/* Meter group: Dopamine vs Бобо */
+.meter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.meter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.meter-name {
+  width: 140px;
+  font-weight: 600;
+}
+
+.dopamine-text {
+  color: #00ffa2;
+  text-shadow: 0 0 8px rgba(0, 255, 162, 0.4);
+}
+
+.pain-text {
+  color: #ff3366;
+  text-shadow: 0 0 8px rgba(255, 51, 102, 0.4);
+}
+
+.meter-track {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.15s ease-out;
+}
+
+.dopamine-fill {
+  background: linear-gradient(90deg, #00d26a, #00ffa2, #ffd700);
+  box-shadow: 0 0 10px #00ffa2;
+}
+
+.pain-fill {
+  background: linear-gradient(90deg, #ff5500, #ff0055);
+  box-shadow: 0 0 10px #ff0055;
+}
+
+.meter-num {
+  width: 40px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.neuron-id {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ff0077;
+  text-shadow: 0 0 10px rgba(255, 0, 119, 0.5);
+  margin-bottom: 4px;
+}
+
+.neuron-details {
+  font-size: 11px;
+  color: #8da4be;
+  margin-bottom: 4px;
+}
+
+.fly-status {
+  font-size: 12px;
+  font-weight: 600;
+  color: #d1e2f7;
+}
+
+/* Bottom HUD */
+.hud-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.controls-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: rgba(12, 16, 28, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 8px 16px;
+  align-items: center;
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #00f5ff;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00f5ff, #0077ff);
+  color: #000000;
+  border: none;
+  box-shadow: 0 0 14px rgba(0, 245, 255, 0.4);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 22px rgba(0, 245, 255, 0.8);
+}
+
+.btn-toggle.active {
+  background: linear-gradient(135deg, #00d26a, #00ffa2);
+  color: #051408;
+  border: none;
+  box-shadow: 0 0 12px rgba(0, 255, 162, 0.4);
+}
+
+.track-select {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #8da4be;
+}
+
+.track-select select {
+  background: #141c2c;
+  color: #ffffff;
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  padding: 6px 10px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 12px;
+}
+
+.hint-text {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
