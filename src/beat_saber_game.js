@@ -12,19 +12,19 @@ export class BeatSaberEngine {
     this.slicedPieces = [];
     this.sparks = [];
 
-    this.speed = 16.0; // Units per second
+    this.speed = 15.0; // Units per second
     this.spawnZ = -55.0;
-    this.hitZ = 0.6;
-    this.missZ = 3.5;
+    this.hitZ = 0.55;
+    this.missZ = 3.2;
 
     this.score = 0;
     this.combo = 0;
     this.multiplier = 1;
     this.maxCombo = 0;
 
-    // Lanes: 4 lanes (-1.5, -0.5, 0.5, 1.5), 2 heights (0.8, 1.55)
+    // Authentic Beat Saber 4 lanes (-1.5, -0.5, 0.5, 1.5) and 2 heights (0.85, 1.55)
     this.lanesX = [-1.5, -0.5, 0.5, 1.5];
-    this.heightsY = [0.8, 1.55];
+    this.heightsY = [0.85, 1.55];
 
     // User Audio & Beatmap state
     this.analyzer = new AudioBeatAnalyzer(audioManager.ctx || new AudioContext());
@@ -40,6 +40,7 @@ export class BeatSaberEngine {
     this.initSparks();
 
     this.onStateChange = null;
+    this.onVisualStimulus = null;
   }
 
   initVisualAssets() {
@@ -49,24 +50,25 @@ export class BeatSaberEngine {
       this.arrowTextures[d] = this.createArrowTexture(d);
     }
 
-    // Authentic Beat Saber Red & Blue materials
-    this.redMat = new THREE.MeshStandardMaterial({
-      color: 0xff0044,
-      emissive: 0x880022,
-      emissiveIntensity: 0.5,
-      roughness: 0.2,
-      metalness: 0.4
+    // Authentic Beat Saber Red (#e51c44) & Blue (#1573fe) Materials
+    // Soft, deep, elegant, no harsh glare
+    this.redBlockMat = new THREE.MeshStandardMaterial({
+      color: 0xe51c44,
+      roughness: 0.25,
+      metalness: 0.35
     });
 
-    this.blueMat = new THREE.MeshStandardMaterial({
-      color: 0x0088ff,
-      emissive: 0x003388,
-      emissiveIntensity: 0.5,
-      roughness: 0.2,
-      metalness: 0.4
+    this.blueBlockMat = new THREE.MeshStandardMaterial({
+      color: 0x1573fe,
+      roughness: 0.25,
+      metalness: 0.35
     });
 
-    this.innerMat = new THREE.MeshBasicMaterial({ color: 0x111118 });
+    this.blockDarkMat = new THREE.MeshStandardMaterial({
+      color: 0x141822,
+      roughness: 0.5,
+      metalness: 0.6
+    });
   }
 
   createArrowTexture(dir) {
@@ -75,7 +77,16 @@ export class BeatSaberEngine {
     canvas.height = 256;
     const ctx = canvas.getContext('2d');
 
-    ctx.fillStyle = '#ffffff';
+    // Deep contrasting dark center with soft rounded white arrow
+    ctx.fillStyle = '#0f141e';
+    ctx.fillRect(0, 0, 256, 256);
+
+    ctx.fillStyle = '#f8fafc';
+    ctx.strokeStyle = '#f8fafc';
+    ctx.lineWidth = 14;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+
     ctx.translate(128, 128);
 
     if (dir === 'down') ctx.rotate(Math.PI);
@@ -84,58 +95,77 @@ export class BeatSaberEngine {
 
     if (dir === 'any') {
       ctx.beginPath();
-      ctx.arc(0, 0, 48, 0, Math.PI * 2);
+      ctx.arc(0, 0, 42, 0, Math.PI * 2);
       ctx.fill();
     } else {
       ctx.beginPath();
-      ctx.moveTo(0, -65);
-      ctx.lineTo(55, 20);
-      ctx.lineTo(24, 20);
-      ctx.lineTo(24, 65);
-      ctx.lineTo(-24, 65);
-      ctx.lineTo(-24, 20);
-      ctx.lineTo(-55, 20);
+      ctx.moveTo(0, -60);
+      ctx.lineTo(52, 18);
+      ctx.lineTo(22, 18);
+      ctx.lineTo(22, 60);
+      ctx.lineTo(-22, 60);
+      ctx.lineTo(-22, 18);
+      ctx.lineTo(-52, 18);
       ctx.closePath();
       ctx.fill();
     }
 
-    return new THREE.CanvasTexture(canvas);
+    const tex = new THREE.CanvasTexture(canvas);
+    return tex;
   }
 
   initEnvironment() {
-    // Floor grid
-    const grid = new THREE.GridHelper(120, 60, 0x0088ff, 0x111828);
-    grid.position.set(0, -0.4, -25);
-    this.scene.add(grid);
+    // Dark glossy runway platform
+    const runwayGeo = new THREE.BoxGeometry(4.2, 0.15, 80);
+    const runwayMat = new THREE.MeshStandardMaterial({
+      color: 0x070912,
+      roughness: 0.2,
+      metalness: 0.8
+    });
+    const runway = new THREE.Mesh(runwayGeo, runwayMat);
+    runway.position.set(0, -0.4, -20);
+    this.scene.add(runway);
 
-    // Neon lane rails
-    const railMat = new THREE.MeshBasicMaterial({ color: 0x004488 });
+    // Glowing lane borders (Left Red / Right Blue edge)
+    const edgeGeo = new THREE.CylinderGeometry(0.018, 0.018, 80, 6);
+    edgeGeo.rotateX(Math.PI / 2);
+
+    const leftEdge = new THREE.Mesh(edgeGeo, new THREE.MeshBasicMaterial({ color: 0xe51c44 }));
+    leftEdge.position.set(-2.1, -0.32, -20);
+    this.scene.add(leftEdge);
+
+    const rightEdge = new THREE.Mesh(edgeGeo, new THREE.MeshBasicMaterial({ color: 0x1573fe }));
+    rightEdge.position.set(2.1, -0.32, -20);
+    this.scene.add(rightEdge);
+
+    // Subtle runway lane markers
     for (const lx of this.lanesX) {
-      const geo = new THREE.CylinderGeometry(0.02, 0.02, 120, 6);
-      geo.rotateX(Math.PI / 2);
-      const rail = new THREE.Mesh(geo, railMat);
-      rail.position.set(lx, -0.38, -25);
+      const railGeo = new THREE.CylinderGeometry(0.008, 0.008, 80, 4);
+      railGeo.rotateX(Math.PI / 2);
+      const rail = new THREE.Mesh(railGeo, new THREE.MeshBasicMaterial({ color: 0x1e293b }));
+      rail.position.set(lx, -0.32, -20);
       this.scene.add(rail);
     }
 
-    // Tunnel neon portals
-    this.portals = [];
-    for (let i = 0; i < 10; i++) {
-      const pGeo = new THREE.TorusGeometry(4.2, 0.05, 8, 36);
-      const pMat = new THREE.MeshBasicMaterial({
-        color: i % 2 === 0 ? 0xff0044 : 0x0088ff,
-        transparent: true,
-        opacity: 0.35
-      });
-      const portal = new THREE.Mesh(pGeo, pMat);
-      portal.position.set(0, 1.2, -i * 8 - 4);
-      this.scene.add(portal);
-      this.portals.push(portal);
+    // Distant Beat Saber Laser Pillars (soft atmospheric sweeps)
+    this.lasers = [];
+    const laserMatRed = new THREE.MeshBasicMaterial({ color: 0xe51c44, transparent: true, opacity: 0.25 });
+    const laserMatBlue = new THREE.MeshBasicMaterial({ color: 0x1573fe, transparent: true, opacity: 0.25 });
+
+    for (let i = 0; i < 8; i++) {
+      const lGeo = new THREE.CylinderGeometry(0.03, 0.03, 40, 6);
+      const isRed = i % 2 === 0;
+      const laser = new THREE.Mesh(lGeo, isRed ? laserMatRed : laserMatBlue);
+      const side = isRed ? -1 : 1;
+      laser.position.set(side * (4.5 + (i % 3) * 1.5), 10, -10 - i * 6);
+      laser.rotation.z = side * 0.35;
+      this.scene.add(laser);
+      this.lasers.push({ mesh: laser, baseRot: laser.rotation.z, speed: 0.8 + i * 0.2 });
     }
   }
 
   initSparks() {
-    const count = 500;
+    const count = 400;
     const geo = new THREE.BufferGeometry();
     const pos = new Float32Array(count * 3);
     const col = new Float32Array(count * 3);
@@ -151,10 +181,10 @@ export class BeatSaberEngine {
     geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
 
     const mat = new THREE.PointsMaterial({
-      size: 0.14,
+      size: 0.08,
       vertexColors: true,
       transparent: true,
-      opacity: 0.95,
+      opacity: 0.85,
       blending: THREE.AdditiveBlending
     });
 
@@ -162,7 +192,7 @@ export class BeatSaberEngine {
     this.scene.add(this.sparkSystem);
   }
 
-  emitSparks(origin, colorHex, count = 30) {
+  emitSparks(origin, colorHex, count = 25) {
     const col = new THREE.Color(colorHex);
     const posAttr = this.sparkSystem.geometry.attributes.position;
     const colAttr = this.sparkSystem.geometry.attributes.color;
@@ -170,17 +200,17 @@ export class BeatSaberEngine {
     let emitted = 0;
     for (let i = 0; i < this.sparkLifetimes.length && emitted < count; i++) {
       if (this.sparkLifetimes[i] <= 0) {
-        this.sparkLifetimes[i] = 0.5 + Math.random() * 0.3;
+        this.sparkLifetimes[i] = 0.45 + Math.random() * 0.25;
         posAttr.setXYZ(i, origin.x, origin.y, origin.z);
         colAttr.setXYZ(i, col.r, col.g, col.b);
 
-        const spd = 4.5 + Math.random() * 6;
+        const spd = 3.5 + Math.random() * 4.5;
         const th = Math.random() * Math.PI * 2;
         const ph = (Math.random() - 0.5) * Math.PI;
 
         this.sparkVelocities[i].set(
           Math.cos(th) * Math.cos(ph) * spd,
-          Math.sin(ph) * spd + 2.5,
+          Math.sin(ph) * spd + 1.8,
           Math.sin(th) * Math.cos(ph) * spd
         );
         emitted++;
@@ -195,15 +225,13 @@ export class BeatSaberEngine {
     if (!audioManager.ctx) audioManager.init();
     this.analyzer.ctx = audioManager.ctx;
 
-    // Stop existing audio
     this.stopAudio();
-
     const result = await this.analyzer.analyzeFile(file);
     this.customAudioBuffer = result.audioBuffer;
     this.customBeatmap = result.beatmap;
     this.beatmapIndex = 0;
 
-    console.log(`[BeatSaber] Битмап создан: ${this.customBeatmap.length} кубиков под музыку ${file.name}`);
+    console.log(`[BeatSaber] Карта готова: ${this.customBeatmap.length} кубиков под музыку ${file.name}`);
     this.startCustomTrack();
     return result;
   }
@@ -225,7 +253,6 @@ export class BeatSaberEngine {
 
     src.onended = () => {
       this.isCustomTrackPlaying = false;
-      console.log('[BeatSaber] Пользовательский трек завершился');
     };
   }
 
@@ -238,16 +265,13 @@ export class BeatSaberEngine {
     audioManager.stop();
   }
 
-  // Spawn cube from custom beatmap based on audio playback time
   updateCustomBeatmapSpawning() {
     if (!this.isCustomTrackPlaying || !this.customBeatmap) return;
 
     const ctx = audioManager.ctx;
     const currentTrackTime = ctx.currentTime - this.audioStartTime;
-
-    // Travel time from spawnZ (-55) to hitZ (0.6)
-    const travelDistance = this.hitZ - this.spawnZ; // 55.6
-    const travelTime = travelDistance / this.speed;  // ~3.47 seconds
+    const travelDistance = this.hitZ - this.spawnZ;
+    const travelTime = travelDistance / this.speed;
 
     while (
       this.beatmapIndex < this.customBeatmap.length &&
@@ -259,17 +283,11 @@ export class BeatSaberEngine {
     }
   }
 
-  // Fallback procedural beat pattern (when no custom audio is uploaded)
   onProceduralBeat(event) {
-    if (this.isCustomTrackPlaying) return; // Do not spawn procedural blocks if custom track plays!
-
-    // Animate portals to beat
-    for (const p of this.portals) {
-      p.scale.setScalar(1.08);
-    }
+    if (this.isCustomTrackPlaying) return;
 
     const lane = Math.floor(Math.random() * 4);
-    const height = Math.random() < 0.7 ? 0 : 1;
+    const height = Math.random() < 0.75 ? 0 : 1;
     const color = lane < 2 ? 'red' : 'blue';
     const dirs = ['down', 'down', 'up', 'left', 'right', 'any'];
     const dir = dirs[Math.floor(Math.random() * dirs.length)];
@@ -278,26 +296,23 @@ export class BeatSaberEngine {
   }
 
   spawnBlock(lane, height, color, direction) {
-    const size = 0.58;
+    const size = 0.54;
+    // Elegant beveled rounded box geometry
     const geo = new THREE.BoxGeometry(size, size, size);
 
-    const baseMat = color === 'red' ? this.redMat : this.blueMat;
+    const baseMat = color === 'red' ? this.redBlockMat : this.blueBlockMat;
     const arrowTex = this.arrowTextures[direction] || this.arrowTextures['down'];
 
     const frontMat = new THREE.MeshStandardMaterial({
       map: arrowTex,
-      color: color === 'red' ? 0xff0044 : 0x0088ff,
-      emissive: color === 'red' ? 0xff0044 : 0x0088ff,
-      emissiveIntensity: 0.6,
       roughness: 0.2
     });
 
-    // Box faces: [right, left, top, bottom, front, back]
-    const materials = [baseMat, baseMat, baseMat, baseMat, frontMat, this.innerMat];
+    const materials = [baseMat, baseMat, baseMat, baseMat, frontMat, this.blockDarkMat];
     const mesh = new THREE.Mesh(geo, materials);
 
     const posX = this.lanesX[lane] || 0;
-    const posY = this.heightsY[height] || 0.8;
+    const posY = this.heightsY[height] || 0.85;
     mesh.position.set(posX, posY, this.spawnZ);
 
     const block = {
@@ -324,16 +339,19 @@ export class BeatSaberEngine {
     // Reinforce agent with Dopamine!
     this.agent.receiveDopamineReward(block.id, 1.0);
 
-    // Audio & visuals
     this.combo++;
     if (this.combo > this.maxCombo) this.maxCombo = this.combo;
     this.multiplier = Math.min(8, 1 + Math.floor(this.combo / 8));
-    this.score += 100 * this.multiplier;
+    const points = 100 * this.multiplier;
+    this.score += points;
 
     audioManager.playSliceHit(this.multiplier, false);
-    const colorHex = block.color === 'red' ? 0xff0044 : 0x0088ff;
-    this.emitSparks(block.mesh.position, colorHex, 35);
+    const colorHex = block.color === 'red' ? 0xe51c44 : 0x1573fe;
+    this.emitSparks(block.mesh.position, colorHex, 24);
     this.createCutPieces(block.mesh.position, block.color);
+
+    // Spawn floating score number
+    this.spawnFloatingScore(`+${points}`, block.mesh.position);
 
     if (this.onStateChange) {
       this.onStateChange({
@@ -368,39 +386,56 @@ export class BeatSaberEngine {
   }
 
   createCutPieces(pos, color) {
-    const halfGeo = new THREE.BoxGeometry(0.28, 0.56, 0.56);
-    const colorHex = color === 'red' ? 0xff0044 : 0x0088ff;
+    const halfGeo = new THREE.BoxGeometry(0.26, 0.52, 0.52);
+    const colorHex = color === 'red' ? 0xe51c44 : 0x1573fe;
     const mat = new THREE.MeshStandardMaterial({
       color: colorHex,
-      emissive: colorHex,
-      emissiveIntensity: 0.4
+      roughness: 0.3
     });
 
     for (const sign of [-1, 1]) {
       const piece = new THREE.Mesh(halfGeo, mat);
       piece.position.copy(pos);
-      piece.position.x += sign * 0.16;
+      piece.position.x += sign * 0.15;
 
       this.scene.add(piece);
       this.slicedPieces.push({
         mesh: piece,
-        vel: new THREE.Vector3(sign * (2.5 + Math.random() * 2), 2.5 + Math.random() * 2, 4 + Math.random() * 3),
-        rotVel: new THREE.Vector3(Math.random() * 8, Math.random() * 8, Math.random() * 8),
-        lifetime: 0.7
+        vel: new THREE.Vector3(sign * (2.2 + Math.random() * 1.5), 2.2 + Math.random() * 1.5, 3.5 + Math.random() * 2),
+        rotVel: new THREE.Vector3(Math.random() * 6, Math.random() * 6, Math.random() * 6),
+        lifetime: 0.65
       });
     }
+  }
+
+  spawnFloatingScore(text, worldPos) {
+    const el = document.createElement('div');
+    el.className = 'floating-hit';
+    el.textContent = text;
+    document.getElementById('hud-root').appendChild(el);
+
+    // Project 3D world position to 2D screen coordinates
+    const screenPos = worldPos.clone().project(this.scene.userData.camera || new THREE.PerspectiveCamera());
+    const x = (screenPos.x * 0.5 + 0.5) * window.innerWidth;
+    const y = (-(screenPos.y * 0.5) + 0.5) * window.innerHeight;
+    el.style.left = `${x}px`;
+    el.style.top = `${y}px`;
+
+    setTimeout(() => {
+      el.remove();
+    }, 600);
   }
 
   update(delta, time) {
     // 1. Spawning from custom audio track
     this.updateCustomBeatmapSpawning();
 
-    // 2. Animate portals back to base scale
-    for (const p of this.portals) {
-      p.scale.lerp(new THREE.Vector3(1, 1, 1), delta * 8);
+    // 2. Animate distant laser sweeps
+    for (const l of this.lasers) {
+      l.mesh.rotation.z = l.baseRot + Math.sin(time * l.speed) * 0.12;
     }
 
-    // 3. Move blocks towards player
+    // 3. Move blocks towards fly
     const moveStep = this.speed * delta;
     for (let i = this.blocks.length - 1; i >= 0; i--) {
       const block = this.blocks[i];
@@ -414,8 +449,7 @@ export class BeatSaberEngine {
       const distToStrike = this.hitZ - z;
 
       // The Fly evaluates the oncoming block using its neural network!
-      // (Visual receptive field activates when block enters striking range)
-      if (distToStrike < 6.0 && distToStrike > -1.0 && !block.evaluated) {
+      if (distToStrike < 5.5 && distToStrike > -1.0 && !block.evaluated) {
         this.agent.evaluateAndAct(block, distToStrike);
         block.evaluated = true;
         if (this.onVisualStimulus) {
@@ -424,19 +458,19 @@ export class BeatSaberEngine {
       }
 
       // Check physical blade collision in the strike zone
-      if (z >= this.hitZ - 0.8 && z <= this.hitZ + 0.9) {
+      if (z >= this.hitZ - 0.75 && z <= this.hitZ + 0.85) {
         block.sliceBox.setFromObject(block.mesh);
 
         // Check Left Saber (Red)
         const leftDist = block.sliceBox.distanceToPoint(this.fly.leftSaber.userData.tipPos);
-        if (leftDist < 0.48 && block.color === 'red') {
+        if (leftDist < 0.46 && block.color === 'red') {
           this.sliceBlock(block, 'red');
           continue;
         }
 
         // Check Right Saber (Blue)
         const rightDist = block.sliceBox.distanceToPoint(this.fly.rightSaber.userData.tipPos);
-        if (rightDist < 0.48 && block.color === 'blue') {
+        if (rightDist < 0.46 && block.color === 'blue') {
           this.sliceBlock(block, 'blue');
           continue;
         }
@@ -471,7 +505,7 @@ export class BeatSaberEngine {
       if (this.sparkLifetimes[i] > 0) {
         this.sparkLifetimes[i] -= delta;
         const vel = this.sparkVelocities[i];
-        vel.y -= 7.5 * delta;
+        vel.y -= 6.5 * delta;
         posAttr.setXYZ(
           i,
           posAttr.getX(i) + vel.x * delta,

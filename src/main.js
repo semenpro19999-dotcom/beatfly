@@ -11,33 +11,34 @@ import { BrainVisualizer } from './brain_visualizer.js';
 // Setup Three.js Scene
 const container = document.getElementById('canvas-container');
 const scene = new THREE.Scene();
-scene.fog = new THREE.FogExp2(0x04060e, 0.018);
+scene.fog = new THREE.FogExp2(0x06080e, 0.016);
 
 const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 150);
-camera.position.set(0, 2.2, 4.2);
+camera.position.set(0, 2.0, 4.0);
+scene.userData.camera = camera;
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.25;
+renderer.toneMappingExposure = 1.05; // Balanced, gentle on the eyes
 container.appendChild(renderer.domElement);
 
-// Lighting
-const ambientLight = new THREE.AmbientLight(0x223355, 1.4);
+// Lighting: Cinematic, subtle, no blinding glare
+const ambientLight = new THREE.AmbientLight(0x1e2638, 1.2);
 scene.add(ambientLight);
 
-const dirLight = new THREE.DirectionalLight(0xffeedd, 1.6);
-dirLight.position.set(2, 8, 5);
+const dirLight = new THREE.DirectionalLight(0xf1f5f9, 1.3);
+dirLight.position.set(3, 8, 5);
 scene.add(dirLight);
 
-// Red & Blue Beat Saber Accent Lights
-const redLight = new THREE.PointLight(0xff0044, 3.0, 18);
-redLight.position.set(-2.5, 2.5, 0);
+// Subtle Red & Blue Beat Saber Accent Lights
+const redLight = new THREE.PointLight(0xe51c44, 1.4, 16, 2);
+redLight.position.set(-2.5, 2.2, 0);
 scene.add(redLight);
 
-const blueLight = new THREE.PointLight(0x0088ff, 3.0, 18);
-blueLight.position.set(2.5, 2.5, 0);
+const blueLight = new THREE.PointLight(0x1573fe, 1.4, 16, 2);
+blueLight.position.set(2.5, 2.2, 0);
 scene.add(blueLight);
 
 // Initialize Components
@@ -78,14 +79,14 @@ connectomeDB.onLoadedCallback = (stats) => {
   console.log(`[Connectome] База данных ${stats.total.toLocaleString()} нейронов подключена к мозгу мухи!`);
   const statusEl = document.getElementById('fly-status');
   if (statusEl) {
-    statusEl.innerHTML = `<span style="color:#00ffaa">🧠 База neurons.csv (${stats.total.toLocaleString()} нейронов) активна!</span>`;
+    statusEl.innerHTML = `<span style="color:#38bdf8">🧠 База neurons.csv (${stats.total.toLocaleString()} нейронов) активна</span>`;
   }
 };
 connectomeDB.load('/neurons.csv');
 
 // HUD Event Handlers
 hud.onUploadAudio = async (file) => {
-  hud.showToast(`🎵 Анализ трека ${file.name}... Генерация кубиков под ритм!`);
+  hud.showToast(`🎵 Анализ трека ${file.name}... Создаем карту кубиков!`);
   try {
     const res = await game.loadCustomAudioFile(file);
     hud.showToast(`✨ Готово! Сгенерировано ${res.beatmap.length} кубиков под музыку! Муха начинает играть!`);
