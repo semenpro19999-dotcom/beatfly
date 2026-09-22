@@ -1,54 +1,59 @@
 import * as THREE from 'three';
 import { audioManager } from './audio.js';
 import { connectomeDB } from './connectome.js';
-import { FlyCharacter } from './fly.js';
-import { GameManager } from './game.js';
+import { RealisticDrosophilaModel } from './fly_model.js';
+import { DrosophilaNeuroAgent } from './neuro_agent.js';
+import { BeatSaberEngine } from './beat_saber_game.js';
+import { CameraFlightManager } from './camera_controller.js';
 import { HUDManager } from './hud.js';
 
-// Setup Three.js
+// Setup Three.js Scene
 const container = document.getElementById('canvas-container');
 const scene = new THREE.Scene();
-scene.fog = new THREE.FogExp2(0x03050d, 0.022);
+scene.fog = new THREE.FogExp2(0x04060e, 0.018);
 
-const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
-camera.position.set(0, 1.9, 3.2);
-camera.lookAt(0, 1.0, -10);
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 150);
+camera.position.set(0, 2.2, 4.2);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.2;
+renderer.toneMappingExposure = 1.25;
 container.appendChild(renderer.domElement);
 
 // Lighting
-const ambientLight = new THREE.AmbientLight(0x223355, 1.2);
+const ambientLight = new THREE.AmbientLight(0x223355, 1.4);
 scene.add(ambientLight);
 
-const dirLight = new THREE.DirectionalLight(0xddeeff, 1.5);
-dirLight.position.set(0, 6, 4);
+const dirLight = new THREE.DirectionalLight(0xffeedd, 1.6);
+dirLight.position.set(2, 8, 5);
 scene.add(dirLight);
 
-// Neon Accent Lights
-const cyanLight = new THREE.PointLight(0x00f5ff, 2.5, 15);
-cyanLight.position.set(-2, 2, 0);
-scene.add(cyanLight);
-
-const redLight = new THREE.PointLight(0xff0055, 2.5, 15);
-redLight.position.set(2, 2, 0);
+// Red & Blue Beat Saber Accent Lights
+const redLight = new THREE.PointLight(0xff0044, 3.0, 18);
+redLight.position.set(-2.5, 2.5, 0);
 scene.add(redLight);
 
+const blueLight = new THREE.PointLight(0x0088ff, 3.0, 18);
+blueLight.position.set(2.5, 2.5, 0);
+scene.add(blueLight);
+
 // Initialize Components
-const fly = new FlyCharacter(scene);
-const game = new GameManager(scene, camera, fly);
+const fly = new RealisticDrosophilaModel(scene);
+const agent = new DrosophilaNeuroAgent(fly);
+const game = new BeatSaberEngine(scene, fly, agent);
+const cameraFlight = new CameraFlightManager(camera, renderer.domElement, fly);
 const hud = new HUDManager(document.getElementById('hud-root'));
 
-game.onHudUpdate = (data) => hud.update(data);
-audioManager.onBeatCallback = (event) => game.onBeat(event);
+// Connect agent events to HUD
+agent.onBrainEvent = (data) => hud.update(data);
+game.onStateChange = (data) => hud.update(data);
+audioManager.onBeatCallback = (event) => game.onProceduralBeat(event);
 
 // Direct loading of neurons.csv
 connectomeDB.onLoadedCallback = (stats) => {
-  console.log(`[Connectome] База данных ${stats.total} нейронов подключена к игре!`);
+  console.log(`[Connectome] База данных ${stats.total.toLocaleString()} нейронов подключена к мозгу мухи!`);
   const statusEl = document.getElementById('fly-status');
   if (statusEl) {
     statusEl.innerHTML = `<span style="color:#00ffaa">🧠 База neurons.csv (${stats.total.toLocaleString()} нейронов) активна!</span>`;
@@ -56,112 +61,66 @@ connectomeDB.onLoadedCallback = (stats) => {
 };
 connectomeDB.load('/neurons.csv');
 
-// User Controls Setup
+// HUD Event Handlers
+hud.onUploadAudio = async (file) => {
+  hud.showToast(`🎵 Анализ трека ${file.name}... Генерация кубиков под ритм!`);
+  try {
+    const res = await game.loadCustomAudioFile(file);
+    hud.showToast(`✨ Готово! Сгенерировано ${res.beatmap.length} кубиков под музыку! Муха начинает играть!`);
+    isPlaying = true;
+    btnPlay.textContent = '⏸ ПАУЗА';
+    btnPlay.classList.remove('btn-primary');
+  } catch (err) {
+    console.error('Ошибка анализа аудио:', err);
+    hud.showToast(`❌ Ошибка загрузки аудио: ${err.message}`);
+  }
+};
+
+hud.onResetBrain = () => {
+  agent.resetBrain();
+  hud.update({
+    accuracy: 0,
+    epsilon: agent.epsilon,
+    dopamine: agent.dopamineLevel,
+    pain: agent.painLevel
+  });
+};
+
+hud.onCameraChange = (mode) => {
+  cameraFlight.setMode(mode);
+};
+
+// Play / Pause Button
 let isPlaying = false;
 const btnPlay = document.getElementById('btn-play');
-const btnAutoPlay = document.getElementById('btn-autoplay');
-const btnCam = document.getElementById('btn-cam');
-const selectTrack = document.getElementById('select-track');
-
 btnPlay.addEventListener('click', () => {
   if (!isPlaying) {
-    audioManager.start(parseInt(selectTrack.value));
+    if (game.customAudioBuffer && !game.isCustomTrackPlaying) {
+      game.startCustomTrack();
+    } else {
+      audioManager.start(0);
+    }
     isPlaying = true;
     btnPlay.textContent = '⏸ ПАУЗА';
     btnPlay.classList.remove('btn-primary');
   } else {
-    audioManager.stop();
+    game.stopAudio();
     isPlaying = false;
-    btnPlay.textContent = '▶ СТАРТ РИТМА';
+    btnPlay.textContent = '▶ СТАРТ';
     btnPlay.classList.add('btn-primary');
   }
 });
 
-btnAutoPlay.addEventListener('click', () => {
-  game.autoPlay = !game.autoPlay;
-  if (game.autoPlay) {
-    btnAutoPlay.classList.add('active');
-    btnAutoPlay.textContent = '🤖 МУХА УЧИТСЯ САМА: ВКЛ';
-  } else {
-    btnAutoPlay.classList.remove('active');
-    btnAutoPlay.textContent = '🎮 РУЧНОЕ УПРАВЛЕНИЕ';
-  }
-});
-
-const camModes = ['thirdPerson', 'firstPerson', 'action'];
-const camLabels = ['📷 КАМЕРА: СЗАДИ', '👁 КАМЕРА: ГЛАЗА МУХИ', '🎬 КАМЕРА: ЭКШН'];
-let camIdx = 0;
-
-btnCam.addEventListener('click', () => {
-  camIdx = (camIdx + 1) % camModes.length;
-  game.setCameraMode(camModes[camIdx]);
-  btnCam.textContent = camLabels[camIdx];
-});
-
-selectTrack.addEventListener('change', () => {
-  if (isPlaying) {
-    audioManager.stop();
-    audioManager.start(parseInt(selectTrack.value));
-  }
-});
-
-// Mouse Interaction
-window.addEventListener('mousemove', (e) => {
-  if (game.autoPlay) return;
-
-  const ndcX = (e.clientX / window.innerWidth) * 2 - 1;
-  const ndcY = -(e.clientY / window.innerHeight) * 2 + 1;
-
-  // Steer sabers with mouse
-  const targetX = ndcX * 1.8;
-  const targetY = 0.5 + (ndcY + 0.5) * 1.2;
-
-  fly.leftSaberTarget.set(targetX - 0.4, targetY, 0.5);
-  fly.rightSaberTarget.set(targetX + 0.4, targetY, 0.5);
-});
-
-window.addEventListener('mousedown', (e) => {
-  audioManager.init();
-  if (game.autoPlay) return;
-
-  if (e.button === 0) {
-    // Left Click: swing left Cyan saber
-    fly.triggerSwing('left', 'down');
-    audioManager.playSaberSwing('cyan');
-  } else if (e.button === 2) {
-    // Right Click: swing right Red saber
-    fly.triggerSwing('right', 'down');
-    audioManager.playSaberSwing('red');
-  }
-});
-
-window.addEventListener('contextmenu', (e) => e.preventDefault());
-
-window.addEventListener('keydown', (e) => {
-  if (e.code === 'Space') {
-    if (game.autoPlay) return;
-    fly.triggerSwing('right', 'down');
-    audioManager.playSaberSwing('red');
-  } else if (e.code === 'KeyA') {
-    if (game.autoPlay) return;
-    fly.triggerSwing('left', 'left');
-    audioManager.playSaberSwing('cyan');
-  } else if (e.code === 'KeyD') {
-    if (game.autoPlay) return;
-    fly.triggerSwing('right', 'right');
-    audioManager.playSaberSwing('red');
-  }
-});
-
+// Resize handler
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-// Auto-start audio on first click anywhere
+// Auto-start on first click
 window.addEventListener('click', () => {
-  if (!isPlaying) {
+  if (!isPlaying && !game.customAudioBuffer) {
     audioManager.start(0);
     isPlaying = true;
     btnPlay.textContent = '⏸ ПАУЗА';
@@ -177,7 +136,9 @@ function animate() {
   const delta = clock.getDelta();
   const time = clock.getElapsedTime();
 
+  cameraFlight.update(delta);
   fly.update(delta, time);
+  agent.update(delta);
   game.update(delta, time);
 
   renderer.render(scene, camera);
