@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { audioManager } from './audio.js';
+import { connectomeDB } from './connectome.js';
 import { FlyCharacter } from './fly.js';
 import { GameManager } from './game.js';
 import { HUDManager } from './hud.js';
@@ -44,6 +45,16 @@ const hud = new HUDManager(document.getElementById('hud-root'));
 
 game.onHudUpdate = (data) => hud.update(data);
 audioManager.onBeatCallback = (event) => game.onBeat(event);
+
+// Direct loading of neurons.csv
+connectomeDB.onLoadedCallback = (stats) => {
+  console.log(`[Connectome] База данных ${stats.total} нейронов подключена к игре!`);
+  const statusEl = document.getElementById('fly-status');
+  if (statusEl) {
+    statusEl.innerHTML = `<span style="color:#00ffaa">🧠 База neurons.csv (${stats.total.toLocaleString()} нейронов) активна!</span>`;
+  }
+};
+connectomeDB.load('/neurons.csv');
 
 // User Controls Setup
 let isPlaying = false;

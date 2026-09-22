@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { audioManager } from './audio.js';
-import neuronsData from './neurons_sample.json';
+import { connectomeDB } from './connectome.js';
+import fallbackNeurons from './neurons_sample.json';
 
 export class GameManager {
   constructor(scene, camera, fly) {
@@ -356,8 +357,11 @@ export class GameManager {
     block.active = false;
     this.scene.remove(block.mesh);
 
-    // Pick a real neuron from dataset (from neurons.csv!)
-    const neuron = neuronsData[Math.floor(Math.random() * neuronsData.length)];
+    // Pick real dopamine reward neuron directly from neurons.csv!
+    const neuron = connectomeDB.isLoaded 
+      ? connectomeDB.getRandomDopamine() 
+      : fallbackNeurons[Math.floor(Math.random() * fallbackNeurons.length)];
+
     this.recentNeurons.unshift(neuron);
     if (this.recentNeurons.length > 5) this.recentNeurons.pop();
 
@@ -415,7 +419,12 @@ export class GameManager {
       this.multiplier = 1;
       this.health = Math.max(0, this.health - 6);
 
-      // Negative reinforcement: "Бобо" (Nociceptive shock)
+      // Negative reinforcement: "Бобо" (Nociceptive shock directly from neurons.csv!)
+      const painNeuron = connectomeDB.isLoaded 
+        ? connectomeDB.getRandomPain() 
+        : { id: 'DNp01', type: 'DNp01 Giant Fiber', sc: 'descending_neuron', nt: 'ACH' };
+
+      this.recentNeurons.unshift(painNeuron);
       this.painLevel = Math.min(100, (this.painLevel || 0) + 20);
       this.dopamineLevel = Math.max(0, (this.dopamineLevel || 30) - 10);
 
@@ -428,6 +437,7 @@ export class GameManager {
       if (this.onHudUpdate) {
         this.onHudUpdate({
           event: 'miss',
+          neuron: painNeuron,
           score: this.score,
           combo: this.combo,
           multiplier: this.multiplier,
@@ -451,6 +461,11 @@ export class GameManager {
     this.health = Math.max(0, this.health - 20);
 
     // Severe pain spike!
+    const painNeuron = connectomeDB.isLoaded 
+      ? connectomeDB.getRandomPain() 
+      : { id: 'DNp01-BOMB', type: 'PPL1 Nociceptor', sc: 'descending_neuron', nt: 'ACH' };
+
+    this.recentNeurons.unshift(painNeuron);
     this.painLevel = Math.min(100, (this.painLevel || 0) + 40);
     this.dopamineLevel = Math.max(0, (this.dopamineLevel || 30) - 20);
 
@@ -463,6 +478,7 @@ export class GameManager {
     if (this.onHudUpdate) {
       this.onHudUpdate({
         event: 'bomb',
+        neuron: painNeuron,
         score: this.score,
         combo: 0,
         multiplier: 1,

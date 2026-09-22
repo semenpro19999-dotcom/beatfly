@@ -43,8 +43,14 @@ var total_misses: int = 0
 var last_state_key: String = ""
 var last_action_idx: int = 0
 
+# Подключение биологического загрузчика коннектома
+var connectome: ConnectomeLoader = null
+
 func _ready() -> void:
-	print("[FlyBrainRL] Нейронная сеть мухи инициализирована по коннектому FlyWire!")
+	connectome = ConnectomeLoader.new()
+	# Загружаем реальный коннектом из neurons.csv
+	connectome.load_from_file("res://neurons.csv")
+	print("[FlyBrainRL] Нейронная сеть мухи напрямую связана с базой neurons.csv!")
 
 ## Кодирование состояния (вход в грибовидное тело / Kenyon Cells)
 func get_state_key(lane: int, height: int, color_type: String, direction: String) -> String:
@@ -96,8 +102,10 @@ func reward_dopamine(hit_quality: float = 1.0) -> void:
 	# Снижаем случайность, муха становится опытнее
 	epsilon = max(min_epsilon, epsilon * epsilon_decay)
 	
-	dopamine_spike.emit(reward, "PAM_cluster_DA_10013")
-	print("[FlyBrain] +ДОФАМИН! Уровень: %.1f | Точность растет! Хитов: %d" % [dopamine_level, total_hits])
+	var da_neuron = connectome.get_random_dopamine_neuron() if connectome else {"type": "PAM", "id": "10013"}
+	var neuron_title = "%s (Root ID: %s, NT: DA)" % [da_neuron.get("type", "PAM"), da_neuron.get("id", "")]
+	dopamine_spike.emit(reward, neuron_title)
+	print("[FlyBrain] +ДОФАМИН от %s! Уровень: %.1f | Хитов: %d" % [neuron_title, dopamine_level, total_hits])
 
 ## Наказание "Бобо" при промахе (Negative Reinforcement / Nociception)
 func penalize_pain(severity: float = 1.0) -> void:
@@ -111,8 +119,10 @@ func penalize_pain(severity: float = 1.0) -> void:
 		var old_val = q_table[last_state_key][last_action_idx]
 		q_table[last_state_key][last_action_idx] = old_val + learning_rate * (penalty - old_val)
 		
-	nociception_spike.emit(penalty, "PPL1_nociceptive_DNp01")
-	print("[FlyBrain] -БОБО (Штраф)! Боль: %.1f | Связь ослаблена! Промахов: %d" % [pain_level, total_misses])
+	var pain_neuron = connectome.get_random_pain_neuron() if connectome else {"type": "DNp01", "id": "10001"}
+	var neuron_title = "%s (Root ID: %s, Рефлекс тревоги)" % [pain_neuron.get("type", "DNp01"), pain_neuron.get("id", "")]
+	nociception_spike.emit(penalty, neuron_title)
+	print("[FlyBrain] -БОБО от %s! Боль: %.1f | Промахов: %d" % [neuron_title, pain_level, total_misses])
 
 func _process(delta: float) -> void:
 	# Естественный метаболизм нейромедиаторов
