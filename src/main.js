@@ -6,6 +6,7 @@ import { DrosophilaNeuroAgent } from './neuro_agent.js';
 import { BeatSaberEngine } from './beat_saber_game.js';
 import { CameraFlightManager } from './camera_controller.js';
 import { HUDManager } from './hud.js';
+import { BrainVisualizer } from './brain_visualizer.js';
 
 // Setup Three.js Scene
 const container = document.getElementById('canvas-container');
@@ -45,10 +46,31 @@ const agent = new DrosophilaNeuroAgent(fly);
 const game = new BeatSaberEngine(scene, fly, agent);
 const cameraFlight = new CameraFlightManager(camera, renderer.domElement, fly);
 const hud = new HUDManager(document.getElementById('hud-root'));
+const brainVis = new BrainVisualizer(document.getElementById('hud-root'));
 
-// Connect agent events to HUD
-agent.onBrainEvent = (data) => hud.update(data);
-game.onStateChange = (data) => hud.update(data);
+// Connect agent events to HUD & Brain Visualizer
+agent.onBrainEvent = (data) => {
+  hud.update(data);
+  if (data.type === 'dopamine') {
+    brainVis.triggerDopamineSpike();
+  } else if (data.type === 'pain') {
+    brainVis.triggerPainSpike();
+  }
+};
+
+game.onStateChange = (data) => {
+  hud.update(data);
+  if (data.event === 'hit') {
+    brainVis.triggerDopamineSpike();
+  } else if (data.event === 'miss') {
+    brainVis.triggerPainSpike();
+  }
+};
+
+game.onVisualStimulus = (lane, color) => {
+  brainVis.triggerOpticInput(lane, color);
+};
+
 audioManager.onBeatCallback = (event) => game.onProceduralBeat(event);
 
 // Direct loading of neurons.csv
@@ -88,6 +110,10 @@ hud.onResetBrain = () => {
 
 hud.onCameraChange = (mode) => {
   cameraFlight.setMode(mode);
+};
+
+hud.onToggleBrain = () => {
+  brainVis.toggle();
 };
 
 // Play / Pause Button
@@ -140,6 +166,7 @@ function animate() {
   fly.update(delta, time);
   agent.update(delta);
   game.update(delta, time);
+  brainVis.render(delta);
 
   renderer.render(scene, camera);
 }

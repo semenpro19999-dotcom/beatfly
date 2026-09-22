@@ -418,6 +418,9 @@ export class BeatSaberEngine {
       if (distToStrike < 6.0 && distToStrike > -1.0 && !block.evaluated) {
         this.agent.evaluateAndAct(block, distToStrike);
         block.evaluated = true;
+        if (this.onVisualStimulus) {
+          this.onVisualStimulus(block.lane, block.color);
+        }
       }
 
       // Check physical blade collision in the strike zone

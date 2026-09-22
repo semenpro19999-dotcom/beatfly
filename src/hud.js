@@ -78,10 +78,15 @@ export class HUDManager {
               <button class="btn btn-cam" data-cam="cockpit">👁 ИЗ ГЛАЗ МУХИ</button>
               <button class="btn btn-cam" data-cam="side">🎬 СБОКУ</button>
             </div>
+
+            <!-- Brain Window Toggle Button -->
+            <button class="btn" id="btn-toggle-brain" title="Показать/скрыть визуальный мозг мухи (Клавиша J)">
+              🧠 МОЗГ МУХИ [J]
+            </button>
           </div>
 
           <div class="hint-text">
-            🎮 <b>Свободная камера:</b> Зажмите <b>ЛКМ</b> для вращения вокруг мухи | Колесо мыши — приближение | Клавиши <b>W, A, S, D, Q, E</b> — свободный полет камеры!
+            🎮 <b>Свободная камера:</b> Зажмите <b>ЛКМ</b> для вращения вокруг мухи | Колесо мыши — зум | <b>WASDQE</b> — полет камеры | Клавиша <b>J</b> — окно мозга мухи!
           </div>
         </div>
       </div>
@@ -111,10 +116,9 @@ export class HUDManager {
       }
     });
 
-    // Reset Brain
-    document.getElementById('btn-reset-brain').addEventListener('click', () => {
-      if (this.onResetBrain) this.onResetBrain();
-      this.showToast('🧠 Мозг мухи сброшен! Обучение начато с нуля.');
+    // Brain toggle button
+    document.getElementById('btn-toggle-brain').addEventListener('click', () => {
+      if (this.onToggleBrain) this.onToggleBrain();
     });
 
     // Camera buttons
